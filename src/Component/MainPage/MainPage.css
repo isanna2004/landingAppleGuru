@@ -1,0 +1,19 @@
+.mainpage{
+    background: center / contain no-repeat url(../../images/background.jpg)
+}
+.thumb{
+    width:80px;
+    margin: 5px;
+}
+.number{
+    position: absolute;
+    top:0;
+    left:5%;
+    font-size: 14px;
+    color:#DDDDDD;
+    
+}
+.gift{
+    border: 1px solid #DDDDDD;
+
+}

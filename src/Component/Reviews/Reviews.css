@@ -1,0 +1,19 @@
+.reviews{padding: 40px;
+    background-color: lightgray;
+}
+.review-text {
+    position: relative;
+    background-color: white;
+  padding: 20px;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+.triangle {
+    display: inline-block;
+    position: absolute;
+   top:100%;
+   left: 20%;
+  border: 10px solid transparent;
+  border-left: 10px solid white;
+  border-top: 10px solid white;
+}
