@@ -1,5 +1,6 @@
 .mainpage{
-    background: center / contain no-repeat url(../../images/background.jpg)
+    background: center no-repeat  url(../../images/background.jpg);
+
 }
 .thumb{
     width:80px;

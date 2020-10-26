@@ -1,9 +1,14 @@
-.reviews{padding: 40px;
+.reviews{padding: 40px 0;
     background-color: lightgray;
+}
+.reviews .col-6{
+    min-width: 300px;
+   
 }
 .review-text {
     position: relative;
     background-color: white;
+    text-align: left;
   padding: 20px;
   border: 1px solid white;
   border-radius: 10px;
@@ -16,4 +21,10 @@
   border: 10px solid transparent;
   border-left: 10px solid white;
   border-top: 10px solid white;
+}
+.thumb-img{
+    width: 75px;
+    border-radius: 50%;
+    float: left;
+    margin: 0 10px;
 }

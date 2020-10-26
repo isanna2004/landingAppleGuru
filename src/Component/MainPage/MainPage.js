@@ -1,9 +1,13 @@
 import React from "react";
 import "./MainPage.css";
-import logo from "../../images/logo.png"
+import logo from "../../images/logo.png";
 import cable from "../../images/cable.jpg";
 import phone from "../../images/phone.png";
 class MainPage extends React.Component {
+  state = {
+    display: "none",
+    isToggleOn: false,
+  };
   render() {
     return (
       <section className="mainpage">
@@ -21,24 +25,40 @@ class MainPage extends React.Component {
                 <div className="form-group mb-2">
                   <input
                     type="tel"
-                    className="phonenumber py-2"
-                    placeholder="введите ваш телефон"
+                    className="phonenumber p-2"
+                    placeholder="Введите ваш телефон"
                   />
                 </div>
                 <button
                   type="submit"
-                  className="btn btn-primary ml-3 mb-2 py-2"
+                  className="btn btn-primary ml-3 mb-2 p-2"
                 >
                   Рассчитать стоимость
                 </button>
               </form>
-              <p>+ получите один из 3 подарков на выбор</p>
+              <p>
+                + получите один из 3 подарков на выбор{" "}
+                <span
+                  style={{ cursor: "pointer" }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    this.setState((state) => ({
+                      isToggleOn: !state.isToggleOn,
+                      display: state.isToggleOn ? "none" : "block",
+                    }));
+                  }}
+                >
+                  Փ
+                </span>
+              </p>
             </div>
             <div className="col-6">
               <div
+                style={{ display: this.state.display }}
                 className="btn-group"
                 role="group"
                 aria-label="Basic example"
+                id="gift"
               >
                 <button type="button" className="gift btn btn-light p-0">
                   <span className="number">1</span>
@@ -51,9 +71,9 @@ class MainPage extends React.Component {
                 <button type="button" className="gift btn btn-light p-0">
                   <span className="number">3</span>
                   <img
-                    className="thumbphone"
+                    className="thumb"
                     src={phone}
-                    style={{ width: "90px", height: "80px" }}
+                    style={{  height: "80px" }}
                   />
                 </button>
               </div>
