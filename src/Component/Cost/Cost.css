@@ -1,10 +1,11 @@
 .form-check-label {
   line-height: 20px;
+
 }
 .form-check {
-  border-bottom: 2px solid grey;
- 
-  width: 300px;
+  border-bottom: 1px solid #DEDEDE;
+   padding: 20px 0;
+  width: 250px;
   text-align: left;
  
 }

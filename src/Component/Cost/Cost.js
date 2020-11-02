@@ -7,10 +7,14 @@ import Button from "../Button/Button";
 import data from "../Data/data.json";
 
 export default class Cost extends React.Component {
+  /*  State */
   state = {
     device: [],
-    model: [],
+    arr1: [],
     elem: [],
+    arr2: [],
+    price: 0,
+    isChecked: true,
   };
   componentDidMount() {
     data.map((data) => {
@@ -23,41 +27,50 @@ export default class Cost extends React.Component {
 
   getModel = (elem) => {
     const models = elem["models"];
-
     this.setState({
       elem: models,
     });
   };
   getService = (modelName) => {
     const model = modelName["prices"];
-    console.log(model);
+    let arr1 = model.slice(0, model.length / 2);
+    let arr2 = model.slice(model.length / 2);
     this.setState({
-      model: model,
+      arr1: arr1,
+      arr2: arr2,
     });
   };
+  Sum = (price) => {
+    const { isChecked } = this.state;
+  console.log(this.state.isChecked)
+    this.setState((state) => ({
+      price: isChecked ? price + this.state.price : state.price - price,
+      isChecked:!state.isChecked
+    
+  }))};
 
-  /*   ; */
+  /*  Render */
 
   render() {
-    const { device, elem, model } = this.state;
+    const { device, elem, arr1, arr2 } = this.state;
 
     return (
       <section className="cost mt-5 text-center">
         <div className=" container">
           <h2 className="title">Стоимость услуг</h2>
-          <div className="row justify-content-center">
+          <div className="row justify-content-center align-item-center">
             {" "}
             {device.map((elem) => {
               return (
                 <div
-                  className="btn-group btn-group-lg my-4 flex-wrap"
+                  className="btn-group btn-group-lg mt-4 flex-wrap"
                   role="group"
                   key={elem.id}
                 >
                   <button
                     type="button"
                     className="btn btn-light p-3 rounded-0"
-                    style={{minWidth:"133px"}}
+                    style={{ minWidth: "133px" }}
                     value={elem.name}
                     onClick={() => {
                       this.getModel(elem);
@@ -69,7 +82,7 @@ export default class Cost extends React.Component {
                 </div>
               );
             })}
-            <div className="col-10 mb-3">
+            <div className="col-10 my-5">
               <div
                 className="btn-group flex-wrap"
                 role="group"
@@ -87,18 +100,32 @@ export default class Cost extends React.Component {
                 })}{" "}
               </div>{" "}
             </div>
+            <div className="col-md-3 col-12">
+              {arr1.map((service) => {
+                let price = service.price;
+                return <Checkbox service={service.service} price={price} />;
+              })}
+            </div>
+            <div className="col-md-4 offset-1">
+              <img src={iphone} style={{ minWidth: "320px" }} />
+            </div>
+            <div className="col-md-3 offset-1 col-12">
+              {arr2.map((service) => {
+                let price = service.price;
+                return (
+                  <Checkbox
+                    service={service.service}
+                    price={price}
+                    onChange={() => {
+                      this.Sum(price);
+                    }}
+                  />
+                );
+              })}
+            </div>
           </div>
-        <div className="check">
-              <img src={iphone} />
-            
-            {model.map((service) => {
-              return (
-                <Checkbox service={service.service} price={service.price} />
-              );
-            })}
-        </div>
           <div className="col-12 mt-5">
-            <h3 className="subtitle">Итого : </h3>
+            <h3 className="subtitle">Итого :{this.state.price} </h3>
             <form className="form-inline justify-content-center mt-4">
               <div className="form-group mb-2">
                 <input
