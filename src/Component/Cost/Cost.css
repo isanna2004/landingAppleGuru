@@ -13,6 +13,9 @@
   background-color: #53a2fc;
   color: white;
 }
+.btn:active{
+  background-color: #53a2fc;
+}
 .icons {
   position: absolute;
   left: 5%;
