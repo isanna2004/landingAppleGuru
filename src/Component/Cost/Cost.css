@@ -12,8 +12,9 @@
 .btn:hover {
   background-color: #53a2fc;
   color: white;
+ 
 }
-.btn:active{
+.btn-light:active{
   background-color: #53a2fc;
 }
 .icons {
@@ -22,6 +23,7 @@
 }
 .banner {
   display: flex;
+  overflow-x: hidden;
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;

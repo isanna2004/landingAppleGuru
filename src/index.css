@@ -14,3 +14,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+section,footer{
+  padding: 70px 20px 10px 20px;
+}
+.title{
+  font-weight: 700;
+}

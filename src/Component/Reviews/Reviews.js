@@ -9,7 +9,7 @@ export default class Reviews extends React.Component {
     return (
       <section className="reviews">
         <div className="container">
-          <h2 className="title text-center">Отзывы</h2>
+          <h1 className="title text-center">Отзывы</h1>
           <div className="row reviews flex-wrap justify-content-center">
             <div className="col-6 mt-3">
               <div className="review">

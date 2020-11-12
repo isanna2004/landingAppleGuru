@@ -4,6 +4,10 @@ import Header from "../Header/Header";
 import MainPage from "../MainPage/MainPage";
 import Cost from "../Cost/Cost";
 import Reviews from "../Reviews/Reviews";
+import Description from "../Description/Description";
+import Slider from "../Slider/Slider";
+import Reputation from "../Reputation/Reputation";
+import Footer from "../Footer/Footer";
 
 class App extends React.Component {
   render() {
@@ -12,6 +16,10 @@ class App extends React.Component {
     <MainPage/>
     <Cost/>
     <Reviews/>
+    <Description/>
+    <Slider/>
+    <Reputation/>
+    <Footer/>
     </div>
   }
 }

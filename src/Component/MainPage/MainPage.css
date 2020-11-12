@@ -1,6 +1,10 @@
-.mainpage{
-    background: center no-repeat  url(../../images/background.jpg);
 
+.mainpage .title{
+
+    width: 55%;
+    line-height: 1.5em;
+ 
+ 
 }
 .thumb{
     width:80px;
@@ -10,11 +14,18 @@
     position: absolute;
     top:0;
     left:5%;
-    font-size: 14px;
+    font-size: 1rem;
     color:#DDDDDD;
     
 }
 .gift{
     border: 1px solid #DDDDDD;
+    background-color:white ;
+    padding:5px 10px;
 
 }
+.btn-primary{
+    background-color: #53A2FC;
+    padding:5px ;
+}
+

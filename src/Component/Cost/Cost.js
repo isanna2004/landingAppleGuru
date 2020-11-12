@@ -42,16 +42,16 @@ export default class Cost extends React.Component {
     const { models, arr1, arr2 } = this.state;
 
     return (
-      <section className="cost mt-5 text-center">
+      <section className="cost text-center">
         <div className=" container">
-          <h2 className="title">Стоимость услуг</h2>
+          <h1 className="title">Стоимость услуг</h1>
           <div className="row justify-content-center">
             {data.map((data) => {
               return (
                 <div
                   className="btn-group btn-group-lg mt-4 flex-wrap"
                   role="group"
-                  key={data.id}
+                  key={data.name}
                 >
                   <button
                     type="button"
@@ -100,7 +100,7 @@ export default class Cost extends React.Component {
               })}
             </div>
             <div className="col-md-4 offset-1">
-              <img src={iphone} style={{ minWidth: "320px" }} />
+              <img src={iphone} style={{ minWidth: "320px" }} alt="iphone"/>
             </div>
             <div className="col-md-3 offset-1 col-12">
               {arr2.map((service) => {
@@ -117,7 +117,7 @@ export default class Cost extends React.Component {
               })}
             </div>
             <div className="col-12 mt-5">
-              <h3 className="subtitle">Итого : {this.state.price} </h3>
+              <h3 className="subtitle">Итого : {this.state.price} рублей </h3>
               <form className="form-inline justify-content-center mt-4">
                 <div className="form-group mb-2">
                   <input
