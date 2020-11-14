@@ -5,7 +5,6 @@
     "models": [
       {
         "name": "5S",
-        "img": "./img/5s.png",
         "prices": [
           {
             "service": "Замена стекла",
@@ -71,7 +70,6 @@
       },
       {
         "name": "6",
-        "img": "./img/6.png",
         "prices": [
           {
             "service": "Замена стекла",
@@ -137,7 +135,6 @@
       },
       {
         "name": "6s",
-        "img": "./img/6s.png",
         "prices": [
           {
             "service": "Замена стекла",
@@ -203,7 +200,6 @@
       },
       {
         "name": "6plus",
-        "img": "./img/6plus.png",
         "prices": [
           {
             "service": "Замена стекла",
@@ -269,7 +265,6 @@
       },
       {
         "name": "6s+",
-        "img": "./img/6s+.png",
         "prices": [
           {
             "service": "Замена стекла",
@@ -335,7 +330,6 @@
       },
       {
         "name": "7",
-        "img": "./img/7.png",
         "prices": [
           {
             "service": "Замена стекла",
@@ -401,7 +395,6 @@
       },
       {
         "name": "7plus",
-        "img": "./img/7plus.png",
         "prices": [
           {
             "service": "Замена стекла",
@@ -467,7 +460,6 @@
       },
       {
         "name": "8",
-        "img": "./img/8.png",
         "prices": [
           {
             "service": "Замена стекла",
@@ -541,7 +533,6 @@
       },
       {
         "name": "8plus",
-        "img": "./img/8plus.png",
         "prices": [
           {
             "service": "Замена стекла",
@@ -615,7 +606,6 @@
       },
       {
         "name": "X",
-        "img": "./img/X.png",
         "prices": [
           {
             "service": "Замена стекла",
@@ -689,7 +679,6 @@
       },
       {
         "name": "Xr",
-        "img": "./img/Xr.png",
         "prices": [
           {
             "service": "Замена стекла",
@@ -763,7 +752,6 @@
       },
       {
         "name": "Xs",
-        "img": "./img/Xs.png",
         "prices": [
           {
             "service": "Замена стекла",
@@ -837,7 +825,6 @@
       },
       {
         "name": "Xs max",
-        "img": "./img/Xsmax.png",
         "prices": [
           {
             "service": "Замена стекла",
@@ -911,7 +898,6 @@
       },
       {
         "name": "11",
-        "img": "./img/11.png",
         "prices": [
           {
             "service": "Замена стекла",
@@ -985,7 +971,6 @@
       },
       {
         "name": "11 pro",
-        "img": "./img/11pro.png",
         "prices": [
           {
             "service": "Замена стекла",
@@ -1059,7 +1044,6 @@
       },
       {
         "name": "11 pro Max",
-        "img": "./img/11promax.png",
         "prices": [
           {
             "service": "Замена стекла",
@@ -1138,7 +1122,6 @@
     "models": [
       {
         "name": "ipad2",
-        "img": "./img/ipad2.png",
         "prices": [
           {
             "service": "Замена стекла",
@@ -1184,7 +1167,6 @@
       },
       {
         "name": "ipad3",
-        "img": "./img/ipad3.png",
         "prices": [
           {
             "service": "Замена стекла",
@@ -1230,7 +1212,6 @@
       },
       {
         "name": "ipad4",
-        "img": "./img/ipad4.png",
         "prices": [
           {
             "service": "Замена стекла",
@@ -1276,7 +1257,367 @@
       },
       {
         "name": "ipad mini",
-        "img": "./img/ipadmini.png",
+        "prices": [
+          {
+            "service": "Замена стекла",
+            "price": 2270
+          },
+          {
+            "service": "Замена дисплея",
+            "price": 3580
+          },
+          {
+            "service": "Замена разъема зарядки",
+            "price": 1880
+          },
+          {
+            "service": "Замена динамика",
+            "price": 1840
+          },
+          {
+            "service": "Попала влага",
+            "price": 3940
+          },
+          {
+            "service": "Замена фронтальной камеры",
+            "price": 1280
+          },
+          {
+            "service": "Замена основной камеры",
+            "price": 2560
+          },
+          {
+            "service": "Замена корпуса",
+            "price": 2300
+          },
+          {
+            "service": "Увеличение памяти",
+            "price": 5590
+          },
+          {
+            "service": "Замена аккумулятора",
+            "price": 2980
+          }
+        ]
+      },
+      {
+        "name": "ipad mini 2",
+        "prices": [
+          {
+            "service": "Замена стекла",
+            "price": 2270
+          },
+          {
+            "service": "Замена дисплея",
+            "price": 3580
+          },
+          {
+            "service": "Замена разъема зарядки",
+            "price": 1880
+          },
+          {
+            "service": "Замена динамика",
+            "price": 1840
+          },
+          {
+            "service": "Попала влага",
+            "price": 3940
+          },
+          {
+            "service": "Замена фронтальной камеры",
+            "price": 1280
+          },
+          {
+            "service": "Замена основной камеры",
+            "price": 2560
+          },
+          {
+            "service": "Замена корпуса",
+            "price": 2300
+          },
+          {
+            "service": "Увеличение памяти",
+            "price": 5590
+          },
+          {
+            "service": "Замена аккумулятора",
+            "price": 2980
+          }
+        ]
+      },
+      {
+        "name": "ipad mini 3",
+        "prices": [
+          {
+            "service": "Замена стекла",
+            "price": 2270
+          },
+          {
+            "service": "Замена дисплея",
+            "price": 3580
+          },
+          {
+            "service": "Замена разъема зарядки",
+            "price": 1880
+          },
+          {
+            "service": "Замена динамика",
+            "price": 1840
+          },
+          {
+            "service": "Попала влага",
+            "price": 3940
+          },
+          {
+            "service": "Замена фронтальной камеры",
+            "price": 1280
+          },
+          {
+            "service": "Замена основной камеры",
+            "price": 2560
+          },
+          {
+            "service": "Замена корпуса",
+            "price": 2300
+          },
+          {
+            "service": "Увеличение памяти",
+            "price": 5590
+          },
+          {
+            "service": "Замена аккумулятора",
+            "price": 2980
+          }
+        ]
+      },
+      {
+        "name": "ipad mini 4",
+        "prices": [
+          {
+            "service": "Замена стекла",
+            "price": 2270
+          },
+          {
+            "service": "Замена дисплея",
+            "price": 3580
+          },
+          {
+            "service": "Замена разъема зарядки",
+            "price": 1880
+          },
+          {
+            "service": "Замена динамика",
+            "price": 1840
+          },
+          {
+            "service": "Попала влага",
+            "price": 3940
+          },
+          {
+            "service": "Замена фронтальной камеры",
+            "price": 1280
+          },
+          {
+            "service": "Замена основной камеры",
+            "price": 2560
+          },
+          {
+            "service": "Замена корпуса",
+            "price": 2300
+          },
+          {
+            "service": "Увеличение памяти",
+            "price": 5590
+          },
+          {
+            "service": "Замена аккумулятора",
+            "price": 2980
+          }
+        ]
+      },
+      {
+        "name": "ipad Air",
+        "prices": [
+          {
+            "service": "Замена стекла",
+            "price": 2270
+          },
+          {
+            "service": "Замена дисплея",
+            "price": 3580
+          },
+          {
+            "service": "Замена разъема зарядки",
+            "price": 1880
+          },
+          {
+            "service": "Замена динамика",
+            "price": 1840
+          },
+          {
+            "service": "Попала влага",
+            "price": 3940
+          },
+          {
+            "service": "Замена фронтальной камеры",
+            "price": 1280
+          },
+          {
+            "service": "Замена основной камеры",
+            "price": 2560
+          },
+          {
+            "service": "Замена корпуса",
+            "price": 2300
+          },
+          {
+            "service": "Увеличение памяти",
+            "price": 5590
+          },
+          {
+            "service": "Замена аккумулятора",
+            "price": 2980
+          }
+        ]
+      },
+
+      {
+        "name": "ipad Air 2",
+        "prices": [
+          {
+            "service": "Замена стекла",
+            "price": 2270
+          },
+          {
+            "service": "Замена дисплея",
+            "price": 3580
+          },
+          {
+            "service": "Замена разъема зарядки",
+            "price": 1880
+          },
+          {
+            "service": "Замена динамика",
+            "price": 1840
+          },
+          {
+            "service": "Попала влага",
+            "price": 3940
+          },
+          {
+            "service": "Замена фронтальной камеры",
+            "price": 1280
+          },
+          {
+            "service": "Замена основной камеры",
+            "price": 2560
+          },
+          {
+            "service": "Замена корпуса",
+            "price": 2300
+          },
+          {
+            "service": "Увеличение памяти",
+            "price": 5590
+          },
+          {
+            "service": "Замена аккумулятора",
+            "price": 2980
+          }
+        ]
+      },
+      {
+        "name": "ipad PRO 9.7' ",
+        "prices": [
+          {
+            "service": "Замена стекла",
+            "price": 2270
+          },
+          {
+            "service": "Замена дисплея",
+            "price": 3580
+          },
+          {
+            "service": "Замена разъема зарядки",
+            "price": 1880
+          },
+          {
+            "service": "Замена динамика",
+            "price": 1840
+          },
+          {
+            "service": "Попала влага",
+            "price": 3940
+          },
+          {
+            "service": "Замена фронтальной камеры",
+            "price": 1280
+          },
+          {
+            "service": "Замена основной камеры",
+            "price": 2560
+          },
+          {
+            "service": "Замена корпуса",
+            "price": 2300
+          },
+          {
+            "service": "Увеличение памяти",
+            "price": 5590
+          },
+          {
+            "service": "Замена аккумулятора",
+            "price": 2980
+          }
+        ]
+      },
+      {
+        "name": "ipad PRO 10.5' ",
+        "prices": [
+          {
+            "service": "Замена стекла",
+            "price": 9580
+          },
+          {
+            "service": "Замена дисплея",
+            "price": 9580
+          },
+          {
+            "service": "Замена разъема зарядки",
+            "price": 2380
+          },
+          {
+            "service": "Замена динамика",
+            "price": 1840
+          },
+          {
+            "service": "Попала влага",
+            "price": 9580
+          },
+          {
+            "service": "Замена фронтальной камеры",
+            "price": 5480
+          },
+          {
+            "service": "Замена основной камеры",
+            "price": 3450
+          },
+          {
+            "service": "Замена корпуса",
+            "price": 8960
+          },
+          {
+            "service": "Увеличение памяти",
+            "price": 11990
+          },
+          {
+            "service": "Замена аккумулятора",
+            "price": 4280
+          }
+        ]
+      },
+      {
+        "name": "ipad PRO 12.9' ",
         "prices": [
           {
             "service": "Замена стекла",
@@ -1326,8 +1667,7 @@
     "name": "Mac",
     "models": [
       {
-        "name": "ipad2",
-        "img": "./img/ipad2.png",
+        "name": "MacBook",
         "prices": [
           {
             "service": "Замена стекла",
@@ -1372,8 +1712,7 @@
         ]
       },
       {
-        "name": "ipad3",
-        "img": "./img/ipad3.png",
+        "name": "MacBook Air",
         "prices": [
           {
             "service": "Замена стекла",
@@ -1418,8 +1757,7 @@
         ]
       },
       {
-        "name": "ipad4",
-        "img": "./img/ipad4.png",
+        "name": "MacBook Pro",
         "prices": [
           {
             "service": "Замена стекла",
@@ -1464,8 +1802,52 @@
         ]
       },
       {
-        "name": "ipad mini",
-        "img": "./img/ipadmini.png",
+        "name": "MacBook Retina",
+        "prices": [
+          {
+            "service": "Замена стекла",
+            "price": 2270
+          },
+          {
+            "service": "Замена дисплея",
+            "price": 3580
+          },
+          {
+            "service": "Замена разъема зарядки",
+            "price": 1880
+          },
+          {
+            "service": "Замена динамика",
+            "price": 1840
+          },
+          {
+            "service": "Попала влага",
+            "price": 3940
+          },
+          {
+            "service": "Замена фронтальной камеры",
+            "price": 1280
+          },
+          {
+            "service": "Замена основной камеры",
+            "price": 2560
+          },
+          {
+            "service": "Замена корпуса",
+            "price": 2300
+          },
+          {
+            "service": "Увеличение памяти",
+            "price": 5590
+          },
+          {
+            "service": "Замена аккумулятора",
+            "price": 2980
+          }
+        ]
+      },
+      {
+        "name": "imac",
         "prices": [
           {
             "service": "Замена стекла",
@@ -1515,8 +1897,7 @@
     "name": "iWatch",
     "models": [
       {
-        "name": "ipad2",
-        "img": "./img/ipad2.png",
+        "name": "Watch series 3",
         "prices": [
           {
             "service": "Замена стекла",
@@ -1561,8 +1942,7 @@
         ]
       },
       {
-        "name": "ipad3",
-        "img": "./img/ipad3.png",
+        "name": "Watch series 4",
         "prices": [
           {
             "service": "Замена стекла",
@@ -1607,8 +1987,7 @@
         ]
       },
       {
-        "name": "ipad4",
-        "img": "./img/ipad4.png",
+        "name": "Watch series 5",
         "prices": [
           {
             "service": "Замена стекла",
@@ -1641,52 +2020,6 @@
           {
             "service": "Замена корпуса",
             "price": 3560
-          },
-          {
-            "service": "Увеличение памяти",
-            "price": 5590
-          },
-          {
-            "service": "Замена аккумулятора",
-            "price": 2980
-          }
-        ]
-      },
-      {
-        "name": "ipad mini",
-        "img": "./img/ipadmini.png",
-        "prices": [
-          {
-            "service": "Замена стекла",
-            "price": 2270
-          },
-          {
-            "service": "Замена дисплея",
-            "price": 3580
-          },
-          {
-            "service": "Замена разъема зарядки",
-            "price": 1880
-          },
-          {
-            "service": "Замена динамика",
-            "price": 1840
-          },
-          {
-            "service": "Попала влага",
-            "price": 3940
-          },
-          {
-            "service": "Замена фронтальной камеры",
-            "price": 1280
-          },
-          {
-            "service": "Замена основной камеры",
-            "price": 2560
-          },
-          {
-            "service": "Замена корпуса",
-            "price": 2300
           },
           {
             "service": "Увеличение памяти",

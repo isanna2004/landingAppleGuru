@@ -47,3 +47,8 @@
     transform: translate(-90%, 0);
   }
 }
+.link{
+  font-size: 1.3em;
+  text-decoration: underline;
+  color: black;
+}

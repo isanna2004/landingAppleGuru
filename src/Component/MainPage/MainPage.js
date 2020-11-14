@@ -3,33 +3,54 @@ import "./MainPage.css";
 import logo from "../../images/logo.png";
 import cable from "../../images/cable.jpg";
 import phone from "../../images/phone.png";
-import background from "../../images/background.jpg"
+import Background from "../../images/background.jpg";
+import Background2 from "../../images/background2.png";
+import Ba from "../../images/ba.png";
+import Background3 from "../../images/background3.jpg";
 export default class MainPage extends React.Component {
   state = {
     display: "none",
     isToggleOn: false,
+    device: "macbook",
 
   };
 
-  componentDidMount(){ 
- let main = document.getElementById("main");
-    var params = new URLSearchParams(window.location.search)
-console.log(params)
-switch (params.utm_device) {
-  case "?utm_model=iphone":
-    main.style.background = "pink";
-    break;
-  case "?utm_model=Mac":
-    main.style.background = "red";
-    break;
-  case "?utm_model=IWatch":
-    main.style.background = "red";
-    break;
-} 
+  componentDidMount() {
+    let main = document.getElementById("main");
+    const params = new URLSearchParams(window.location.search);
+    const device = params.get("utm_device")
+    if (device == null || device.toLowerCase().replace("/","")==this.state.device) {
+      main.style.background = `center no-repeat url(${Background})`;
+      this.setState({
+        device:"macbook"
+      })
 
- 
+    } else {
+      switch (device.toLowerCase().replace("/", "")) {
+        case "iphone":
+          main.style.background = `right no-repeat url(${Ba})`;
+          main.style.backgroundSize = "610px";
+          break;
+        case "mac":
+          main.style.background = `no-repeat right url(${Background2})`;
+          main.style.backgroundSize = "765px";
+          break;
+        case "iwatch":
+          main.style.background = `center no-repeat url(${Background})`;
+          break;
+        case "ipad":
+          main.style.background = `right no-repeat url(${Background3})`;
+          break;
+      }
+    this.setState({
+      device: device.replace("/",""),
+    });
+  
+    }
+        console.log(this.state.device)
   }
   render() {
+  const{device}=this.state
     return (
       <main>
         <section className="mainpage" id="main">
@@ -37,14 +58,15 @@ switch (params.utm_device) {
             <div className="row">
               <div className="col-12">
                 <h1 className="title">
-                  Отремонтируем ваш <span className="highlights">MacBook</span> за 1 день у вас на дому с выгодой до
-                  20%
+                  Отремонтируем ваш 
+                  <span className="highlights"> {device}</span> за 1
+                  день у вас на дому с выгодой до 20%
                 </h1>
               </div>
               <div className="col-12 mt-5">
                 <p>Бесплатно расчитайте точную стоимость ремонта за 5 мин</p>
                 <form className="form-inline">
-                  <div className="form-group mb-2">
+                  <div className="form-group mb-2 mr-3 ">
                     <input
                       type="tel"
                       className="phonenumber p-2"
@@ -53,7 +75,7 @@ switch (params.utm_device) {
                   </div>
                   <button
                     type="submit"
-                    className="btn btn-primary ml-3 mb-2 p-2"
+                    className="btn btn-primary ml-2 mb-2 p-2"
                   >
                     Рассчитать стоимость
                   </button>

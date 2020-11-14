@@ -1,10 +1,13 @@
 
 .mainpage .title{
-
     width: 55%;
     line-height: 1.5em;
  
- 
+}
+@media (max-width: 600px){
+    .mainpage .title{
+        width: 100%;
+    }
 }
 .thumb{
     width:80px;

@@ -84,7 +84,9 @@ export default class Reviews extends React.Component {
             </div>
           </div>
           <div className="col-12 text-center">
-            <Link to="/">Посмотреть ещё</Link>
+            <Link to="/" className="link">
+              Посмотреть ещё
+            </Link>
           </div>
         </div>
       </section>
