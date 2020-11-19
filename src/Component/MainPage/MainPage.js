@@ -47,7 +47,7 @@ export default class MainPage extends React.Component {
     });
   
     }
-        console.log(this.state.device)
+        
   }
   render() {
   const{device}=this.state

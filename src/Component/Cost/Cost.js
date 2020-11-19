@@ -3,17 +3,26 @@ import { Link } from "react-router-dom";
 import Checkbox from "../Checkbox/Checkbox";
 import "./Cost.css";
 import iphone from "../../images/iphone.png";
-import Button from "../Button/Button";
+
 import data from "../Data/data.json";
+
+const devices = {
+  "iphone/": 0,
+  "ipad/": 1,
+  "mac/": 2,
+  "iwatch/": 3,
+};
+const urlParams = new URLSearchParams(window.location.search);
+let utm_device = urlParams.get("utm_device");console.log(utm_device)
+utm_device = utm_device && devices[utm_device]
 
 export default class Cost extends React.Component {
   /*  State */
   state = {
     device: data,
-    selectedDevice: 0,
+    selectedDevice: utm_device,
     selectedModel: 0,
     arr1: [],
-    model: [],
     arr2: [],
     price: 0,
   };
@@ -29,20 +38,14 @@ export default class Cost extends React.Component {
   /*  Render */
 
   render() {
-    const {
-      device,
-      arr1,
-      arr2,
-      selectedDevice,
-      selectedModel,
-    } = this.state;
+    const { device, arr1, arr2, selectedDevice, selectedModel } = this.state;
 
     return (
       <section className="cost text-center">
         <div className=" container">
           <h1 className="title">Стоимость услуг</h1>
-          <div className="row justify-content-center"> 
-          {device.map((deviceItem, idx) => { 
+          <div className="row justify-content-center">
+            {device.map((deviceItem, idx) => {
               return (
                 <div
                   className="btn-group btn-group-lg mt-4 flex-wrap"
@@ -78,7 +81,7 @@ export default class Cost extends React.Component {
                         idx == selectedModel ? "btn-primary" : "btn-light"
                       }`}
                       style={{ width: "105px", height: "52px" }}
-                      onClick={() => 
+                      onClick={() =>
                         this.setState({
                           selectedModel: idx,
                           arr1: arr1,
