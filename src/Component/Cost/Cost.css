@@ -41,14 +41,24 @@
 }
 @keyframes marquee {
   0% {
-    transform: translate(100%, 0);
+    transform: translate(50%, 0);
   }
   100% {
-    transform: translate(-90%, 0);
+    transform: translate(-100%, 0);
   }
 }
 .link{
   font-size: 1.3em;
   text-decoration: underline;
   color: black;
+}
+@media (max-width:990px){
+  .iphone{
+    position: absolute;
+ 
+    left:0%
+  }
+.iphone-img{
+  opacity: 0.3;
+}
 }

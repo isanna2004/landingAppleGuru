@@ -9,37 +9,15 @@ import data from "../Data/data.json";
 export default class Cost extends React.Component {
   /*  State */
   state = {
+    device: data,
+    selectedDevice: 0,
+    selectedModel: 0,
     arr1: [],
-    models: [],
+    model: [],
     arr2: [],
     price: 0,
   };
-  componentDidMount() {
-    const params = new URLSearchParams(window.location.search);
-    const device = params.get("utm_device")
-    this.setState({
-      device: device,
-    });
-  }
 
-  /** */
-  getModel = (data) => {
-    const models = data.models;
-     const name=data.name.toLowerCase() 
-    this.setState({
-      models: models,
-      name:name
-    });
-  };
-  /** */
-  getService = (model) => {
-    let arr1 = model.prices.slice(0, model.prices.length / 2);
-    let arr2 = model.prices.slice(model.prices.length / 2);
-    this.setState({
-      arr1: arr1,
-      arr2: arr2,
-    });
-  };
   /** */
   Sum = (price, e) => {
     let check = e.target.checked;
@@ -51,68 +29,93 @@ export default class Cost extends React.Component {
   /*  Render */
 
   render() {
-    const { models, arr1, arr2, device,name } = this.state;
+    const {
+      device,
+      arr1,
+      arr2,
+      selectedDevice,
+      selectedModel,
+    } = this.state;
 
     return (
       <section className="cost text-center">
         <div className=" container">
           <h1 className="title">Стоимость услуг</h1>
-          <div className="row justify-content-center">
-            {data.map((data) => {
-                return <div
-                    className="btn-group btn-group-lg mt-4 flex-wrap"
-                    role="group"
-                    key={data.name}
+          <div className="row justify-content-center"> 
+          {device.map((deviceItem, idx) => { 
+              return (
+                <div
+                  className="btn-group btn-group-lg mt-4 flex-wrap"
+                  role="group"
+                  key={deviceItem.name}
+                >
+                  <button
+                    type="button"
+                    className={`btn  p-3 rounded-0 ${
+                      idx == selectedDevice ? "btn-primary" : "btn-light"
+                    }`}
+                    style={{ minWidth: "133px" }}
+                    onClick={() => this.setState({ selectedDevice: idx })}
                   >
-                    <button
-                      type="button"
-                      className="btn btn-light p-3 rounded-0"
-                      style={{ minWidth: "133px" }}
-                      onClick={() => {
-                        this.getModel(data);
-                      }}
-                    >
-                      {data.name}
-                    </button>
-                  </div>
+                    {deviceItem.name}
+                  </button>
+                </div>
+              );
             })}
-            
             <div className="col-10 my-5">
-              {models.map((model) => {
+              {device[selectedDevice].models.map((model, idx) => {
+                let arr1 = model.prices.slice(0, model.prices.length / 2),
+                  arr2 = model.prices.slice(model.prices.length / 2);
+
                 return (
                   <div
                     className="btn-group flex-wrap"
                     role="group"
                     aria-label="Basic example"
                   >
-                    <Button
-                      value={model.name}
-                      onClick={() => {
-                        this.getService(model);
-                      }}
-                    />
+                    <button
+                      className={`btn m-1 rounded-0 ${
+                        idx == selectedModel ? "btn-primary" : "btn-light"
+                      }`}
+                      style={{ width: "105px", height: "52px" }}
+                      onClick={() => 
+                        this.setState({
+                          selectedModel: idx,
+                          arr1: arr1,
+                          arr2: arr2,
+                        })
+                      }
+                    >
+                      {model.name}
+                    </button>
                   </div>
                 );
               })}
             </div>{" "}
-            <div className="col-md-3 col-12">
-              {arr1.map((service) => {
-                let price = service.price;
+          </div>
+          <div className="row  position-relative justify-content-center">
+            <div className="col-lg-3 col-12">
+              {arr1.map((item) => {
                 return (
                   <Checkbox
-                    service={service.service}
-                    price={price}
+                    service={item.service}
+                    price={item.price}
                     onChange={(e) => {
-                      this.Sum(price, e);
+                      this.Sum(item.price, e);
                     }}
                   />
                 );
               })}
             </div>
-            <div className="col-md-4 offset-1">
-              <img src={iphone} style={{ minWidth: "320px" }} alt="iphone" />
+            <div className="col-lg-6 iphone col-12">
+              <img
+                src={iphone}
+                alt="iphone"
+                style={{ minWidth: "300px" }}
+                className="iphone-img"
+              />
             </div>
-            <div className="col-md-3 offset-1 col-12">
+            <div className="col-lg-3 col-12">
               {arr2.map((service) => {
                 let price = service.price;
                 return (
@@ -143,7 +146,9 @@ export default class Cost extends React.Component {
                   заказать ремонт
                 </button>
               </form>
-              <Link to="/" className="link">Не нашли своей поломки?</Link>
+              <Link to="/" className="link">
+                Не нашли своей поломки?
+              </Link>
             </div>{" "}
           </div>
           <div className="banner my-5">
