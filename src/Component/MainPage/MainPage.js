@@ -9,7 +9,7 @@ import Ba from "../../images/ba.png";
 import Background3 from "../../images/background3.jpg";
 export default class MainPage extends React.Component {
   state = {
-    display: "none",
+    opasity: 0,
     isToggleOn: false,
     device: "macbook",
 
@@ -88,7 +88,7 @@ export default class MainPage extends React.Component {
                       e.preventDefault();
                       this.setState((state) => ({
                         isToggleOn: !state.isToggleOn,
-                        display: state.isToggleOn ? "none" : "block",
+                        opasity: state.isToggleOn ? "0" : "1",
                       }));
                     }}
                   >
@@ -98,7 +98,7 @@ export default class MainPage extends React.Component {
               </div>
               <div className="col-6">
                 <div
-                  style={{ display: this.state.display }}
+                  style={{ opacity: this.state.opasity }}
                   className="btn-group"
                   role="group"
                   aria-label="Basic example"

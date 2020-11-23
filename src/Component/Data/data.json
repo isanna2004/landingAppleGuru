@@ -1,6 +1,7 @@
 [
   {
     "name": "iPhone",
+    "defaultSelectedModel":1,
     "image": "",
     "models": [
       {
@@ -1119,6 +1120,7 @@
   },
   {
     "name": "iPad",
+    "defaultSelectedModel": 1,
     "models": [
       {
         "name": "ipad2",
@@ -1665,6 +1667,7 @@
   },
   {
     "name": "Mac",
+    "defaultSelectedModel": 1,
     "models": [
       {
         "name": "MacBook",
@@ -1895,6 +1898,7 @@
   },
   {
     "name": "iWatch",
+    "defaultSelectedModel": 1,
     "models": [
       {
         "name": "Watch series 3",

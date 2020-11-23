@@ -13,34 +13,36 @@ const devices = {
   "iwatch/": 3,
 };
 const urlParams = new URLSearchParams(window.location.search);
-let utm_device = urlParams.get("utm_device")
-utm_device = utm_device && devices[utm_device]
+let utm_device = urlParams.get("utm_device");
+utm_device = utm_device && devices[utm_device];
 
 export default class Cost extends React.Component {
   /*  State */
   state = {
     device: data,
-    selectedDevice: utm_device,
+    selectedDevice: utm_device || 0,
     selectedModel: 0,
-    arr1: [],
-    arr2: [],
     price: 0,
-
+  
   };
 
   /** */
-  Sum = (price, e) => {
-    let check = e.target.checked;
+  Sum = (price, check) => {
+   
     this.setState((state) => ({
-      price: check ? price + this.state.price : state.price - price,
+      price: check ? price.price + this.state.price : state.price - price.price,
+   
     }));
+ 
   };
 
   /*  Render */
 
   render() {
-    const { device, arr1, arr2, selectedDevice, selectedModel } = this.state;
-
+    const { device, selectedDevice, selectedModel } = this.state;
+    let price = device[selectedDevice].models[selectedModel].prices;
+    const price_left = price.slice(0, Math.floor(price.length / 2));
+    const price_right = price.slice(Math.floor(price.length / 2));
     return (
       <section className="cost text-center">
         <div className=" container">
@@ -59,7 +61,13 @@ export default class Cost extends React.Component {
                       idx == selectedDevice ? "btn-primary" : "btn-light"
                     }`}
                     style={{ minWidth: "133px" }}
-                    onClick={() => this.setState({ selectedDevice: idx })}
+                    onClick={() =>
+                      this.setState({
+                        selectedDevice: idx,
+                        selectedModel: deviceItem.defaultSelectedModel,
+                        price: 0,
+                      })
+                    }
                   >
                     {deviceItem.name}
                   </button>
@@ -67,16 +75,7 @@ export default class Cost extends React.Component {
               );
             })}
             <div className="col-10 my-5">
-              {device[selectedDevice].models.map((model,idx) => {
-               let deviceModel = device[selectedDevice].models[idx];
-                let arr1 = deviceModel.prices.slice(
-                    0,
-                    deviceModel.prices.length / 2
-                  ),
-                  arr2 = deviceModel.prices.slice(
-                    deviceModel.prices.length / 2
-                  );
-
+              {device[selectedDevice].models.map((model, idx) => {
                 return (
                   <div
                     className="btn-group flex-wrap"
@@ -90,10 +89,8 @@ export default class Cost extends React.Component {
                       style={{ width: "105px", height: "52px" }}
                       onClick={() =>
                         this.setState({
-                          selectedModel:idx,
-                          arr1:arr1,
-                          arr2:arr2
-                         
+                          selectedModel: idx,
+                          price: 0,
                         })
                       }
                     >
@@ -106,14 +103,14 @@ export default class Cost extends React.Component {
           </div>
           <div className="row  position-relative justify-content-center">
             <div className="col-lg-3 col-12">
-              {arr1.map((service) => {
-             
+              {price_left.map((service) => {
                 return (
                   <Checkbox
                     service={service.service}
                     price={service.price}
                     onChange={(e) => {
-                      this.Sum(service, e);
+                      let check = e.target.checked;
+                      this.Sum(service, check);
                     }}
                   />
                 );
@@ -128,14 +125,14 @@ export default class Cost extends React.Component {
               />
             </div>
             <div className="col-lg-3 col-12">
-              {arr2.map((service) => {
-             
+              {price_right.map((service) => {
                 return (
                   <Checkbox
                     service={service.service}
                     price={service.price}
                     onChange={(e) => {
-                      this.Sum(service, e);
+                      let check = e.target.checked;
+                      this.Sum(service, check);
                     }}
                   />
                 );
@@ -161,7 +158,7 @@ export default class Cost extends React.Component {
               <Link to="/" className="link">
                 Не нашли своей поломки?
               </Link>
-            </div>{" "}
+             </div> </div>{" "}
           </div>
           <div className="banner my-5">
             <div className=" text-layer">
@@ -176,8 +173,12 @@ export default class Cost extends React.Component {
             <div className=" text-layer">
               <p className="cost-text">Гарантия 1 год</p>
             </div>
+            <div className=" text-layer">
+              <p className="cost-text">Выедем к вам в течение 30 минут</p>
+            </div>
+           
           </div>{" "}
-        </div>
+      
       </section>
     );
   }
