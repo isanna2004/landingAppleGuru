@@ -1,10 +1,15 @@
 import React from "react";
-import Modal from "../Modal/Modal";
+import ModalWindow from "../Modal/Modal";
 
 import "./Header.css";
-let modal = document.getElementById("modal");
+
 class Header extends React.Component {
+  state = {
+    show: false,
+    phone: 0,
+  };
   render() {
+
     return (
       <div className="header bg-dark py-3">
         <div className="container">
@@ -70,18 +75,29 @@ class Header extends React.Component {
             <div className="col-12 col-md-2 text-center my-1">
               {" "}
               <button
-                className="btn btn-primary p-2"
-                onClick={() => {
-                  let modal = document.getElementById("modal");
-                  modal.style.display = "block";
-                }}
+                className="btn btn-primary ml-2 mb-2 p-2"
+                type="button"
+                onClick={() => this.setState({ show: true })}
               >
                 Заказать звонок
               </button>
+              <ModalWindow
+                show={this.state.show}
+                close={() => {
+                  this.setState({ show: false });
+                }}
+                value={(e) => {
+                  let phone = document.getElementById("phoneNumber").value;
+                  this.setState({
+                    phone: phone,
+                    show: false,
+                  });
+                  e.preventDefault();
+                }}
+              />
             </div>
           </div>
         </div>
-        <Modal onClose={() => (modal.style.display = "none")} />
       </div>
     );
   }

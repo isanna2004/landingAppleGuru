@@ -6,12 +6,15 @@ import phone from "../../images/phone.png";
 import Background from "../../images/background.jpg";
 import Background2 from "../../images/background2.png";
 import Ba from "../../images/ba.png";
-import Modal from "../Modal/Modal";
+import ModalWindow from "../Modal/Modal";
 import Background3 from "../../images/background3.jpg";
 export default class MainPage extends React.Component {
   state = {
     device: "macbook",
+    show: false,
+    phone: 0,
   };
+  
 
   componentDidMount() {
     let main = document.getElementById("main");
@@ -67,7 +70,6 @@ export default class MainPage extends React.Component {
               </div>
               <div className="col-12 mt-5">
                 <p>Бесплатно расчитайте точную стоимость ремонта за 5 мин</p>{" "}
-                <Modal />
                 <form className="form-inline">
                   <div className="form-group mb-2 mr-3 ">
                     <input
@@ -77,15 +79,27 @@ export default class MainPage extends React.Component {
                     />
                   </div>
                   <button
-                    onClick={() => {
-                      let modal = document.getElementById("modal");
-                      modal.style.display = "block";
-                    }}
+                  type="button"
+                    onClick={() => this.setState({ show: true })}
                     className="btn btn-primary ml-2 mb-2 p-2"
                   >
                     Рассчитать стоимость
                   </button>
                 </form>
+                <ModalWindow
+                  show={this.state.show}
+                  close={() => {
+                    this.setState({ show: false });
+                  }}
+                  value={(e) => {
+                    let phone = document.getElementById("phoneNumber").value;
+                    this.setState({
+                      phone: phone,
+                      show: false,
+                    });
+                    e.preventDefault();
+                  }}
+                />
                 <div className="col-6">
                   <p>
                     + получите один из 3 подарков на выбор{" "}

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Modal from "../Modal/Modal";
+import ModalWindow from "../Modal/Modal";
 import "./Cost.css";
 import iphone from "../../images/iphone.png";
 
@@ -23,6 +23,7 @@ export default class Cost extends React.Component {
     selectedDevice: utm_device || 0,
     selectedModel: 0,
     price: 0,
+    show:false
   };
 
   /** */
@@ -154,25 +155,39 @@ export default class Cost extends React.Component {
                 <div className="form-group mb-2">
                   <input
                     type="tel"
-                    className="phonenumber p-2"
+                    className="phonenumber p-2 my-1"
                     placeholder="Введите ваш телефон"
                   />
                 </div>
                 <button
-                onClick={()=>{
-                   let modal = document.getElementById("modal");
-                   modal.style.display = "block";
-                }}
-                  type="submit"
-                  className="btn btn-primary ml-3 mb-2 py-2"
+                  onClick={() => this.setState({ show: true })}
+                  type="button"
+                  className="btn btn-primary ml-3 mb-2 p-2"
                 >
                   заказать ремонт
                 </button>
               </form>
-              <Link to="/" className="link">
+              <Link
+                to="/"
+                className="link"
+                onClick={() => this.setState({ show: true })}
+              >
                 Не нашли своей поломки?
               </Link>
-              <Modal/>
+              <ModalWindow
+                show={this.state.show}
+                close={() => {
+                  this.setState({ show: false });
+                }}
+                value={(e) => {
+                  let phone = document.getElementById("phoneNumber").value;
+                  this.setState({
+                    phone: phone,
+                    show: false,
+                  });
+                  e.preventDefault();
+                }}
+              />
             </div>{" "}
           </div>{" "}
         </div>
