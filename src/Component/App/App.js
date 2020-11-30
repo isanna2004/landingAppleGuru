@@ -9,6 +9,7 @@ import Slider from "../Slider/Slider";
 import Reputation from "../Reputation/Reputation";
 import Footer from "../Footer/Footer";
 
+
 class App extends React.Component {
   render() {
     return <div>

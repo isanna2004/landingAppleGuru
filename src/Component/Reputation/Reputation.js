@@ -6,7 +6,7 @@ import "./Reputation.css";
 export default class Reputation extends React.Component {
   render() {
     return (
-      <section className="Reputation text-center">
+      <section className="Reputation text-center" id="reputation">
         <h1 className="title">Дорожим своей репутацией</h1>
         <h4 className="slider-subtitle mt-4">Мы никогда не нарушаем 3 железных правила в нашей кампании</h4>
         <div className="row justify-content-center mt-5 flex-wrap">

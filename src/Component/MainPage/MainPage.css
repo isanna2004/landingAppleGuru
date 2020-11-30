@@ -31,4 +31,6 @@
     background-color: #53A2FC;
     padding:5px ;
 }
-
+.mainpage .btn-group{
+    opacity: 0;
+}

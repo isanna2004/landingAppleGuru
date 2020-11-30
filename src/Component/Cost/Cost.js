@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Checkbox from "../Checkbox/Checkbox";
+import Modal from "../Modal/Modal";
 import "./Cost.css";
 import iphone from "../../images/iphone.png";
 
@@ -23,17 +23,14 @@ export default class Cost extends React.Component {
     selectedDevice: utm_device || 0,
     selectedModel: 0,
     price: 0,
-  
   };
 
   /** */
-  Sum = (price, check) => {
-   
+  Sum = (price, e) => {
+    let check = e.target.checked;
     this.setState((state) => ({
       price: check ? price.price + this.state.price : state.price - price.price,
-   
     }));
- 
   };
 
   /*  Render */
@@ -43,8 +40,9 @@ export default class Cost extends React.Component {
     let price = device[selectedDevice].models[selectedModel].prices;
     const price_left = price.slice(0, Math.floor(price.length / 2));
     const price_right = price.slice(Math.floor(price.length / 2));
+
     return (
-      <section className="cost text-center">
+      <section className="cost text-center" id="cost">
         <div className=" container">
           <h1 className="title">Стоимость услуг</h1>
           <div className="row justify-content-center">
@@ -58,7 +56,7 @@ export default class Cost extends React.Component {
                   <button
                     type="button"
                     className={`btn  p-3 rounded-0 ${
-                      idx == selectedDevice ? "btn-primary" : "btn-light"
+                      idx === selectedDevice ? "btn-primary" : "btn-light"
                     }`}
                     style={{ minWidth: "133px" }}
                     onClick={() =>
@@ -81,16 +79,18 @@ export default class Cost extends React.Component {
                     className="btn-group flex-wrap"
                     role="group"
                     aria-label="Basic example"
+                    key={model.name}
                   >
                     <button
                       className={`btn m-1 py-1 ${
-                        idx == selectedModel ? "btn-primary" : "btn-light"
+                        idx === selectedModel ? "btn-primary" : "btn-light"
                       }`}
                       style={{ width: "105px", height: "52px" }}
                       onClick={() =>
                         this.setState({
                           selectedModel: idx,
                           price: 0,
+                          check: false,
                         })
                       }
                     >
@@ -105,14 +105,19 @@ export default class Cost extends React.Component {
             <div className="col-lg-3 col-12">
               {price_left.map((service) => {
                 return (
-                  <Checkbox
-                    service={service.service}
-                    price={service.price}
-                    onChange={(e) => {
-                      let check = e.target.checked;
-                      this.Sum(service, check);
-                    }}
-                  />
+                  <div className="form-check" key={service.service}>
+                    <input
+                      key={"" + selectedDevice + selectedModel}
+                      className="form-check-input"
+                      type="checkbox"
+                      onChange={(e) => {
+                        this.Sum(service, e);
+                      }}
+                    />
+                    <label className="form-check-label">
+                      {service.service} - <b>{service.price}</b>
+                    </label>
+                  </div>
                 );
               })}
             </div>
@@ -127,14 +132,19 @@ export default class Cost extends React.Component {
             <div className="col-lg-3 col-12">
               {price_right.map((service) => {
                 return (
-                  <Checkbox
-                    service={service.service}
-                    price={service.price}
-                    onChange={(e) => {
-                      let check = e.target.checked;
-                      this.Sum(service, check);
-                    }}
-                  />
+                  <div className="form-check" key={service.service}>
+                    <input
+                      key={"" + selectedDevice + selectedModel}
+                      className="form-check-input"
+                      type="checkbox"
+                      onChange={(e) => {
+                        this.Sum(service, e);
+                      }}
+                    />
+                    <label className="form-check-label">
+                      {service.service} - <b>{service.price}</b>
+                    </label>
+                  </div>
                 );
               })}
             </div>
@@ -149,6 +159,10 @@ export default class Cost extends React.Component {
                   />
                 </div>
                 <button
+                onClick={()=>{
+                   let modal = document.getElementById("modal");
+                   modal.style.display = "block";
+                }}
                   type="submit"
                   className="btn btn-primary ml-3 mb-2 py-2"
                 >
@@ -158,27 +172,27 @@ export default class Cost extends React.Component {
               <Link to="/" className="link">
                 Не нашли своей поломки?
               </Link>
-             </div> </div>{" "}
-          </div>
-          <div className="banner my-5">
-            <div className=" text-layer">
-              <p className="cost-text">Выедем к вам в течение 30 минут</p>
-            </div>
-            <div className=" text-layer">
-              <p className="cost-text">Ремонт от 30 минут</p>
-            </div>
-            <div className=" text-layer">
-              <p className="cost-text">Запасные запчасти в наличии</p>
-            </div>
-            <div className=" text-layer">
-              <p className="cost-text">Гарантия 1 год</p>
-            </div>
-            <div className=" text-layer">
-              <p className="cost-text">Выедем к вам в течение 30 минут</p>
-            </div>
-           
+              <Modal/>
+            </div>{" "}
           </div>{" "}
-      
+        </div>
+        <div className="banner my-5">
+          <div className=" text-layer">
+            <p className="cost-text">Выедем к вам в течение 30 минут</p>
+          </div>
+          <div className=" text-layer">
+            <p className="cost-text">Ремонт от 30 минут</p>
+          </div>
+          <div className=" text-layer">
+            <p className="cost-text">Запасные запчасти в наличии</p>
+          </div>
+          <div className=" text-layer">
+            <p className="cost-text">Гарантия 1 год</p>
+          </div>
+          <div className=" text-layer">
+            <p className="cost-text">Выедем к вам в течение 30 минут</p>
+          </div>
+        </div>{" "}
       </section>
     );
   }

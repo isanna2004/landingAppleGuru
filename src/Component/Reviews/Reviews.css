@@ -29,6 +29,7 @@
     margin: 0 10px;
 }
 #link{
+    color: black;
     text-decoration: underline;
     font-size: 1.2rem;
 }

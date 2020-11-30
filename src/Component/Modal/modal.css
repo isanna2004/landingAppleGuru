@@ -1,0 +1,17 @@
+#modal{
+    width: 30%;
+    min-width: 300px;
+    display: none;
+    position: absolute;
+left:35%;
+    background:#53A2FC;
+    padding: 20px 10px;
+    color: white;
+    z-index: 10;
+}
+@media(max-width:700px){
+ #modal{
+  position: absolute;
+     left:calc(50%-150px)
+ }
+}

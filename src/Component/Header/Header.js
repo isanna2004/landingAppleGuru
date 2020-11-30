@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import "./Header.css";
+import Modal from "../Modal/Modal";
 
+import "./Header.css";
+let modal = document.getElementById("modal");
 class Header extends React.Component {
   render() {
     return (
@@ -40,24 +41,24 @@ class Header extends React.Component {
               <nav className="header-nav">
                 <ul className="nav justify-content-center flex-wrap">
                   <li className="nav-item">
-                    <Link to="/" className="text-white">
+                    <a href="#cost" className="text-white">
                       Цены
-                    </Link>
+                    </a>
                   </li>
                   <li className="nav-item">
-                    <Link to="/" className="text-white">
+                    <a className="text-white" href="#about us">
                       О нас
-                    </Link>
+                    </a>
                   </li>
                   <li className="nav-item">
-                    <Link to="/" className="text-white">
+                    <a className="text-white" href="#reputation">
                       Гарантия
-                    </Link>
+                    </a>
                   </li>
                   <li className="nav-item">
-                    <Link to="/" className="text-white">
+                    <a className="text-white" href="#footer">
                       Контакты
-                    </Link>
+                    </a>
                   </li>
                 </ul>{" "}
               </nav>
@@ -68,10 +69,19 @@ class Header extends React.Component {
             </div>
             <div className="col-12 col-md-2 text-center my-1">
               {" "}
-              <button className="btn btn-primary">Заказать звонок</button>
+              <button
+                className="btn btn-primary p-2"
+                onClick={() => {
+                  let modal = document.getElementById("modal");
+                  modal.style.display = "block";
+                }}
+              >
+                Заказать звонок
+              </button>
             </div>
           </div>
         </div>
+        <Modal onClose={() => (modal.style.display = "none")} />
       </div>
     );
   }

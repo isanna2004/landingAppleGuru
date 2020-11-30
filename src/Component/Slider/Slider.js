@@ -23,7 +23,7 @@ export default class Slider extends React.Component {
     ];
 
     return (
-      <section className="slider text-center">
+      <section className="slider text-center" id="about us">
         <div className="container">
           <div className="row justify-content-center">
             <h2 className="slider-title">
